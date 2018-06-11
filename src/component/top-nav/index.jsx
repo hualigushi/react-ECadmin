@@ -1,16 +1,27 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
+import MUtil from 'util/mm.jsx'
+import User from 'service/user-service.jsx'
+
+const _mm = new MUtil()
+const _user = new User()
+
 class TopNav extends React.Component {
     constructor (props) {
         super(props)
         this.state = {
-            username: /*_mm.getStorage('userInfo').username || */''
+            username: _mm.getStorage('userInfo').username || ''
         }
     }
     // 退出登录
     onLogout () {
-
+        _user.logout().then(res => {
+            _mm.removeStorage('userInfo')
+            window.location.href = '/login'
+        }, errMsg => {
+            _mm.errTips(errMsg)
+        })
     }
     render(){
         return (

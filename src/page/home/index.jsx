@@ -3,6 +3,14 @@ import { Link }     from 'react-router-dom';
 
 import PageTitle    from 'component/page-title/index.jsx';
 
+import MUtil from 'util/mm.jsx'
+import Statistic from 'service/statistic-service.jsx'
+
+const _mm = new MUtil()
+const _statistic = new Statistic()
+
+import './index.scss'
+
 class Home extends React.Component {
     constructor(props){
         super(props);
@@ -11,6 +19,16 @@ class Home extends React.Component {
             productCount    : '-',
             orderCount      : '-'
         }
+    }
+    componentDidMount () {
+        this.loadCount()
+    }
+    loadCount () {
+        _statistic.getHomeCount().then(res => {
+            this.setState(res)
+        }, errMsg => {
+            _mm.errTips(errMsg)
+        })
     }
     render(){
         return (
