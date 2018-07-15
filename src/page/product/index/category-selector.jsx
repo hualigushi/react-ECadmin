@@ -58,7 +58,7 @@ class CategorySelector extends React.Component{
                 firstCategoryList : res
             });
         }, errMsg => {
-            _mm.errorTips(errMsg);
+            _mm.errTips(errMsg);
         });
     }
     // 加载二级分类
@@ -68,7 +68,7 @@ class CategorySelector extends React.Component{
                 secondCategoryList : res
             });
         }, errMsg => {
-            _mm.errorTips(errMsg);
+            _mm.errTips(errMsg);
         });
     }
     // 选择一级品类

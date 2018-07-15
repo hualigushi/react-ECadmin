@@ -42,7 +42,7 @@ class ProductDetail extends React.Component{
                 });
                 this.setState(res);
             }, (errMsg) => {
-                _mm.errorTips(errMsg);
+                _mm.errTips(errMsg);
             });
         }
     }

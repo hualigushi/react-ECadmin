@@ -45,7 +45,7 @@ class ProductSave extends React.Component{
                 res.defaultDetail = res.detail;
                 this.setState(res);
             }, (errMsg) => {
-                _mm.errorTips(errMsg);
+                _mm.errTips(errMsg);
             });
         }
     }
@@ -74,7 +74,7 @@ class ProductSave extends React.Component{
     }
     // 上传图片失败
     onUploadError(errMsg){
-        _mm.errorTips(errMsg);
+        _mm.errTips(errMsg);
     }
     // 删除图片
     onImageDelete(e){
@@ -116,12 +116,12 @@ class ProductSave extends React.Component{
                 _mm.successTips(res);
                 this.props.history.push('/product/index');
             }, (errMsg) => {
-                _mm.errorTips(errMsg);
+                _mm.errTips(errMsg);
             });
         }
         // 表单验证失败
         else{
-            _mm.errorTips(productCheckResult.msg);
+            _mm.errTips(productCheckResult.msg);
         }
         
     }

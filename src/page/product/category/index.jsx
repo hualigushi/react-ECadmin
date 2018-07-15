@@ -42,7 +42,7 @@ class CategoryList extends React.Component{
             this.setState({
                 list : []
             });
-            _mm.errorTips(errMsg);
+            _mm.errTips(errMsg);
         });
     }
     // 更新品类的名字
@@ -56,7 +56,7 @@ class CategoryList extends React.Component{
                 _mm.successTips(res);
                 this.loadCategoryList();
             }, errMsg => {
-                _mm.errorTips(errMsg);
+                _mm.errTips(errMsg);
             });
         }
     }

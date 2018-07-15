@@ -27,7 +27,7 @@ class CategoryAdd extends React.Component{
                 categoryList : res
             });
         }, errMsg => {
-            _mm.errorTips(errMsg);
+            _mm.errTips(errMsg);
         });
     }
     // 表单的值发生变化
@@ -50,12 +50,12 @@ class CategoryAdd extends React.Component{
                 _mm.successTips(res);
                 this.props.history.push('/product-category/index');
             }, (errMsg) => {
-                _mm.errorTips(errMsg);
+                _mm.errTips(errMsg);
             });
         }
         // 否则，提示错误
         else{
-            _mm.errorTips('请输入品类名称');
+            _mm.errTips('请输入品类名称');
         }
     }
     render(){
