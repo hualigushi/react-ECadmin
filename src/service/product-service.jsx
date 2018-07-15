@@ -100,6 +100,22 @@ class Product {
             }
         })
     }
+    // 新增品类
+    saveCategory(category){
+        return _mm.request({
+            type    : 'post',
+            url     : '/manage/category/add_category.do',
+            data    : category
+        });
+    }
+    // 修改品类名称
+    updateCategoryName(category){
+        return _mm.request({
+            type    : 'post',
+            url     : '/manage/category/set_category_name.do',
+            data    : category
+        });
+    }
 }
 
 export default Product
